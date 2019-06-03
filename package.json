@@ -1,0 +1,10 @@
+{
+  "name": "rljs-service",
+  "description": "REST API for reinforcejs",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "4.x",
+    "mongodb": "^2.2.24"
+  }
+}

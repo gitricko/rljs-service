@@ -1,0 +1,4 @@
+name: rljs-service
+dependencies:
+- conda-forge::nodejs=6.11.0=0
+
