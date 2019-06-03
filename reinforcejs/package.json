@@ -1,0 +1,4 @@
+{ "name" : "reinforcejs"
+, "version" : "0.0.0"
+, "main" : "lib/rl"
+}
