@@ -1,10 +1,25 @@
 {
   "name": "rljs-service",
   "description": "REST API for reinforcejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "body-parser": "^1.16.1",
-    "express": "4.x",
-    "mongodb": "^2.2.24"
-  }
+    "express": "^4.x",
+    "mongodb": "^3.5.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "build": "npm install",
+    "prod": "killall mongod || mongod --fork --logpath=./mongo_db/mongod.log --dbpath=./mongo_db --port=27772 && node server.js",
+    "dev": "killall mongod || mongod --fork --logpath=./mongo_db/mongod.log --dbpath=./mongo_db --port=27772 && nodemon --inspect server.js"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gitricko/rljs-service.git"
+  },
+  "author": "gitricko",
+  "license": ""
 }

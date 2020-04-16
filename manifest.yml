@@ -1,0 +1,6 @@
+applications:
+- name: rljs-service
+  memory: 96M
+  disk_quota: 3GB
+  buildpacks:
+    - python_buildpack
