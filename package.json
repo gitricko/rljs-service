@@ -12,8 +12,8 @@
   },
   "scripts": {
     "build": "npm install",
-    "prod" : "killall mongod || mongod --fork --logpath=./mongo_db/mongod.log --dbpath=./mongo_db --port=27772 && node server.js",
-    "dev"  : "killall mongod || mongod --fork --logpath=./mongo_db/mongod.log --dbpath=./mongo_db --port=27772 && nodemon --inspect server.js"
+    "prod": "killall mongod || mongod --fork --logpath=./mongo_db/mongod.log --dbpath=./mongo_db --port=27772 && node server.js",
+    "dev": "killall mongod || mongod --fork --logpath=./mongo_db/mongod.log --dbpath=./mongo_db --port=27772 && nodemon --inspect server.js"
   },
   "main": "server.js",
   "repository": {
