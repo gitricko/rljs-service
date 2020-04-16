@@ -1,4 +1,7 @@
 name: rljs-service
+channels:
+  - conda-forge
 dependencies:
-- conda-forge::nodejs=6.11.0=0
-
+  - python=3.8
+  - nodejs=13.10.1
+  - mongodb=4.0.3

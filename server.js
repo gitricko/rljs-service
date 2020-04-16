@@ -208,7 +208,7 @@ function listModels(callback, collection) {
 }
 
 function persistModel(brain, successRate, collection) {
-  collection.insert({
+  collection.insertOne({
       timestamp: new Date().toLocaleString(),
       alpha: brain.alpha,
       epsilon: brain.epsilon,
@@ -240,12 +240,17 @@ function getMongoConnection() {
   var schema = 'rljs_db';
   var collection = 'models';
   var vcap = process.env.VCAP_SERVICES;
-  if(typeof(vcap) !== 'undefined') {
-    vcap = JSON.parse(vcap);
-    var mongo_serv = vcap.mongodb[0];
-    ip = mongo_serv.credentials.uri;
-    schema = url.parse(ip).pathname.substring(1);
-  }
+	try {
+		if(typeof(vcap) !== 'undefined') {
+	    vcap = JSON.parse(vcap);
+	    var mongo_serv = vcap.mongodb[0];
+	    ip = mongo_serv.credentials.uri;
+	    schema = url.parse(ip).pathname.substring(1);
+	  }
+	} catch (err) {
+		console.log(err);
+	}
+
   return {
     url: ip,
     schema: schema,
