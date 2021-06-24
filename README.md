@@ -1,6 +1,11 @@
 # rljs-service
 RL JS MicroService
 
+### Prerequisites of setting up Development Environment
+
+* [VSCode as IDE](https://code.visualstudio.com/download)
+* [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+
 ### Dev Setup
 - Clone github and change into the github directory
 - Create conda environment: ```conda env create -f environment.yml```
