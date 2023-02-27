@@ -1,9 +1,10 @@
 EP_APP ?= rljs-service
 
-deploy:
+clean:
 	# delete mongo_db/ and node_modules/
 	rm -rf mongo_db node_modules
 
+deploy: clean
 	-epinio app delete $(EP_APP)
 	epinio app create $(EP_APP)
 	# create environment.yml file from environment_dev.yml file
