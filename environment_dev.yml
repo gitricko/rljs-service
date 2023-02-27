@@ -2,6 +2,6 @@ name: rljs-service
 channels:
   - conda-forge
 dependencies:
-  - python=3.9
+  - mongodb=4     #dev
+  - python=3.9    #dev
   - nodejs=15
-  - mongodb=4

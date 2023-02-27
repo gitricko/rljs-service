@@ -236,23 +236,22 @@ function executeQuery(callback) {
 }
 
 function getMongoConnection() {
-  var ip = 'mongodb://127.0.0.1:27772/';
-  var schema = 'rljs_db';
+  var hostname = process.env.MONGODB_HOST || '127.0.0.1'
+  var port = process.env.MONGODB_PORT || 27772
+  var schema = process.env.MONGO_SCHEMA || 'rljs_db'
+  var user = process.env.MONGODB_USR 
+  var password = process.env.MONGODB_PWD
+
+  if(typeof(user) !== 'undefined' && typeof(password) !== 'undefined') {
+    var uri = `mongodb://${user}:${password}@${hostname}:${port}/`;
+  } else {
+    var uri = `mongodb://${hostname}:${port}/`;
+  }
+ 
   var collection = 'models';
-  var vcap = process.env.VCAP_SERVICES;
-	try {
-		if(typeof(vcap) !== 'undefined') {
-	    vcap = JSON.parse(vcap);
-	    var mongo_serv = vcap.mongodb[0];
-	    ip = mongo_serv.credentials.uri;
-	    schema = url.parse(ip).pathname.substring(1);
-	  }
-	} catch (err) {
-		console.log(err);
-	}
 
   return {
-    url: ip,
+    url: uri,
     schema: schema,
     collection: collection
   };
