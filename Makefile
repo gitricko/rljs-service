@@ -19,7 +19,7 @@ deploy: clean
 	# bind service to app	
 	epinio service bind $(EP_APP)_mongodb $(EP_APP)
 
-	# push app
+	# push app   --builder-image gcr.io/buildpacks/builder:google-22
 	epinio push --name $(EP_APP) \
 		-e MONGODB_CONFIG=$$(epinio configurations list | grep $(EP_APP)_mongodb | awk '{print $$2}')
 
