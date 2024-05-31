@@ -11,7 +11,7 @@ jobs:
         
       - name: list all actions
         run: |
-          ls -lah /home/runner/work/_actions
+          ls -lahd /home/runner/work/_actions/*
 
       - name: Sonarless Scan
         uses: gitricko/sonar-less-action@fix/action-on-other-repo
