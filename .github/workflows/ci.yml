@@ -3,11 +3,15 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  example_job:
+  CI:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         
+      - name: list all actions
+        run: |
+          ls -lah /home/runner/work/_actions
+
       - name: Sonarless Scan
-        uses: gitricko/sonar-less-action@main
+        uses: gitricko/sonar-less-action@fix/action-on-other-repo
