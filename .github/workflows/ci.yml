@@ -14,4 +14,4 @@ jobs:
           ls -lahR /home/runner/work/_actions/*
 
       - name: Sonarless Scan
-        uses: gitricko/sonar-less-action@fix-nomake
+        uses: gitricko/sonar-less-action@main
