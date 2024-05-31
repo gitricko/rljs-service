@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Sonarless Scan
-        uses: actions/gitricko/sonar-less-action@main
+        uses: gitricko/sonar-less-action@main
