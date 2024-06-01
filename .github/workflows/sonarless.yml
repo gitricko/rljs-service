@@ -3,7 +3,7 @@ name: Sonarless-Scan
 on: [push, pull_request]
 
 jobs:
-  CI:
+  Sonarless-Scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
