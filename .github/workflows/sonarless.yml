@@ -10,6 +10,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sonarless Scan
-        uses: gitricko/sonarless@main
+        uses: gitricko/sonarless@v1
         with:
           sonar-source-path: 'reinforcejs/lib'
