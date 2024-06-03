@@ -11,3 +11,5 @@ jobs:
 
       - name: Sonarless Scan
         uses: gitricko/sonarless@main
+        with:
+          sonar-source-path: 'reinforcejs/lib'
