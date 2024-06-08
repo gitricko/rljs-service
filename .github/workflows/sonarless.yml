@@ -1,0 +1,15 @@
+name: Sonarless-Scan
+
+on: [push, pull_request]
+
+jobs:
+  Sonarless-Scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sonarless Scan
+        uses: gitricko/sonarless@v1.1
+        with:
+          sonar-source-path: 'reinforcejs/lib'
